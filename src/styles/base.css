@@ -1,0 +1,151 @@
+:root {
+  --ink: #f6f1ff;
+  --ink-2: #c9c0dc;
+  --ink-3: #8f86a6;
+  --night: #15111f;
+  --night-2: #1d1830;
+  --night-3: #282141;
+  --line: rgba(255, 255, 255, 0.09);
+  --ember: #ffb347;
+  --ember-2: #ff8a3c;
+  --violet: #8f7cff;
+  --mint: #3fcf8e;
+  --sky: #38c8f0;
+  --rose: #ff5f7e;
+  --radius: 16px;
+  font-family: "Segoe UI Variable Text", "Segoe UI", ui-rounded, "SF Pro Rounded", system-ui, -apple-system, Ubuntu, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+html[data-window="overlay"],
+html[data-window="overlay"] body {
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.muted {
+  color: var(--ink-3);
+}
+
+.small {
+  font-size: 12px;
+}
+
+.error {
+  color: #ff9db0;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  transition: background 0.15s;
+}
+
+.chip:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.chip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.icon-btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+  font-size: 18px;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+}
+
+.primary {
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  color: #24160a;
+  background: linear-gradient(135deg, #ffd27a, var(--ember-2));
+  box-shadow: 0 4px 18px rgba(255, 150, 60, 0.35);
+}
+
+.primary:hover {
+  filter: brightness(1.06);
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ghost {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pop-in {
+  animation: pop-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
